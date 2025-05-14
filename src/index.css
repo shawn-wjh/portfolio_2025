@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+:root {
+  /* Theme Colors */
+  --primary-bg: #181818;
+  --secondary-bg: #242424;
+  --tertiary-bg: #2d2d2d;
+  --primary-text: #ffffff;
+  --secondary-text: #e5e7eb;
+  --accent-text: #9ca3af;
+  --card-bg: #242424;
+  --primary-accent: #ff3131;
+  --card-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --card-hover-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+
+  /* Typography */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tertiary-bg);
+  cursor: pointer;
+}
+
+/* Base Styles */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+  overflow-x: hidden;
+}
+
+/* Section Styles */
+.section {
+  min-height: 100vh;
+  padding: 5rem 1rem;
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-text);
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  text-decoration-color: var(--primary-accent);
+  text-decoration-thickness: 0.3rem;
+}
+
+/* Card Styles */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 0.5rem;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: var(--card-hover-shadow);
+}
+
+/* Text Styles */
+.text-primary {
+  color: var(--primary-text);
+}
+
+.text-secondary {
+  color: var(--secondary-text);
+}
+
+.text-accent {
+  color: var(--accent-text);
+}
+
+.icon {
+  width: 100%; /* or max-width: 150px if you want */
+  aspect-ratio: 1 / 1;
+  object-fit: cover; /* makes the image fill the square nicely */
+}
