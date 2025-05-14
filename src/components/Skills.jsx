@@ -110,23 +110,23 @@ const Skills = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-5 gap-6 w-full"
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6 w-full max-w-6xl mx-auto"
           >
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 whileHover={{ scale: 1.03, backgroundColor: "var(--tertiary-bg)" }}
-                className="aspect-square bg-[var(--secondary-bg)]/60 backdrop-blur-lg rounded-lg flex flex-col items-center justify-center hover:cursor-pointer transition-all duration-300"
+                className="aspect-square bg-[var(--secondary-bg)]/60 backdrop-blur-lg rounded-lg flex flex-col items-center justify-center hover:cursor-pointer transition-all duration-300 p-4"
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.2 }}
-                  className="mb-2 text-6xl"
+                  className="mb-2 text-[min(5.5rem,8vw)]"
                 >
                   {skill.icon}
                 </motion.div>
-                <p className="text-sm text-[var(--secondary-text)] text-center">
+                <p className="text-[min(0.875rem,2vw)] text-[var(--secondary-text)] text-center">
                   {skill.name}
                 </p>
               </motion.div>
