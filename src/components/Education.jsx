@@ -7,7 +7,8 @@ const Education = () => {
             degree: "Bachelor of Engineering in Software Engineering",
             school: "University of New South Wales",
             year: "Started 2024",
-            description: "Maintaining a WAM of 82.625.",
+            description: "Maintaining a WAM of 84.20.",
+            link: "https://drive.google.com/file/d/11GgZLzwl8YJURIi9eu_VuNSnSzeaq5ED/view?usp=sharing"
         },
         {
             degree: "Cambridge International A-Levels",
@@ -36,6 +37,14 @@ const Education = () => {
                 duration: 0.5,
             },
         },
+    };
+    
+    const handleLinkClick = (link) => {
+        if (link) {
+            window.open(link, "_blank");
+        } else {
+            alert("Work in progress!");
+        }
     };
 
     return (
@@ -68,6 +77,14 @@ const Education = () => {
                             <p className="text-xl text-[var(--secondary-text)] mt-2">{edu.school}</p>
                             <p className="text-[var(--secondary-text)] mt-1">{edu.year}</p>
                             <p className="text-[var(--secondary-text)] mt-4">{edu.description}</p>
+                            {edu.link && (
+                                <button
+                                    onClick={() => handleLinkClick(edu.link)}
+                                    className="text-[var(--secondary-text)] mt-4 underline hover:text-[var(--primary-accent)] hover:cursor-pointer"
+                                >
+                                    View my Academic Transcript
+                                </button>
+                            )}
                             {edu.list && edu.list.map((item, index) => (
                                 <li key={index} className="text-[var(--secondary-text)] mt-4">{item}</li>
                             ))}
